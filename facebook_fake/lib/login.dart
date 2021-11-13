@@ -141,7 +141,7 @@ class SignFailed extends StatefulWidget{
     @override
     Widget build(BuildContext context) {
       return Scaffold(
-        backgroundColor: Colors.cyan,
+        backgroundColor: Colors.blue,
         body:  Column(
         children: [
           Container(
@@ -155,8 +155,8 @@ class SignFailed extends StatefulWidget{
                   shape: CircleBorder(),
                 ),
                 child: const Icon(
-                Icons.mail,
-                  color: Colors.cyan,
+                Icons.facebook,
+                  color: Colors.blue,
                   size: 90,
                 ),
               ),
