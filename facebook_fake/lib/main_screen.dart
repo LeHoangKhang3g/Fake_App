@@ -1,13 +1,17 @@
+import 'package:facebook_fake/profile.dart';
 import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
 import 'add_friend_screen.dart';
 import 'notification_screen';
+import 'profile.dart';
+import 'security.dart';
 
 class MenuItem{
+  final int id;
   final IconData icon;
   final String title;
-  MenuItem(this.icon,this.title);
+  MenuItem(this.id,this.icon,this.title);
 }
 
 class MainScreen extends StatefulWidget {
@@ -19,9 +23,9 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   List<MenuItem> menu =[
-    MenuItem(Icons.person_pin_rounded,"Profile"),
-    MenuItem(Icons.security,"Security"),
-    MenuItem(Icons.door_back_door_outlined,"Sign out"),
+    MenuItem(0,Icons.person_pin_rounded,"Profile"),
+    MenuItem(1,Icons.security,"Security"),
+    MenuItem(2,Icons.door_back_door_outlined,"Sign out"),
   ];
   
   @override
@@ -30,7 +34,18 @@ class _MainScreenState extends State<MainScreen> {
     Widget buildMenuItem(MenuItem item)=>ListTile(
       leading: Icon(item.icon),
       title: Text(item.title),
-      onTap: (){Navigator.pop(context);},
+      onTap: (){
+        if(item.id==0){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const Profile()));
+        }
+        else if(item.id==1){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> const Security()));
+        }
+        else if(item.id==2){
+          Navigator.pop(context);
+          Navigator.pop(context);
+        }
+      },
     );
 
     return DefaultTabController(
@@ -62,9 +77,9 @@ class _MainScreenState extends State<MainScreen> {
                     Container(
                       padding: const EdgeInsets.all(14),
                       child: const CircleAvatar(
-                      radius: 50,
-                      foregroundImage: ExactAssetImage("images/avatar4.jpg"),
-                    ),   
+                        radius: 50,
+                        foregroundImage: ExactAssetImage("images/avatar4.jpg"),
+                      ),   
                     ),      
                     const Text("cdth19c@gmail.com"),
                   ],
