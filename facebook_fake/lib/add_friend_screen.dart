@@ -30,93 +30,101 @@ class _AddFriendScreen extends State<AddFriendScreen>{
       AddFriendInfo("avatar2.jpg" ,"Huy Hoàng", "2 tháng", 15),
     ];
 
-    Widget buildAddFriend(AddFriendInfo info)=> Row(
+    Widget buildAddFriend(AddFriendInfo info)=> Container(
+      color: const Color.fromRGBO(255, 255, 255, 100),
+      padding: const EdgeInsets.all(4),
+      margin: const EdgeInsets.fromLTRB(6,2,6,2),
+      child: Row(
+        children: [
+          Container(
+            height: 150,
+            margin: const EdgeInsets.fromLTRB(20, 20, 0, 20),
+            child:  Row(
+              children:  [
+                CircleAvatar(
+                      radius: 75,
+                      foregroundImage: ExactAssetImage("images/"+info.avatarName),
+                ),
+              
+                Column( 
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [ 
+                        Container(
+                          margin: const EdgeInsets.all(10),
+                          child: Text(
+                            info.name,
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),    
+                        ),
+                        Container(
+                          margin: EdgeInsets.fromLTRB(width-485, 5, 10, 0),
+                          child:  Text(
+                          info.time,
+                            style: const TextStyle(
+                            color : Colors.grey,
+                            ),
+                          ),
+                        ),
+                        
+                      ],
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child:  Text(
+                        info.mutualFriends.toString() + " bạn chung ",
+                          style: const TextStyle(
+                            color : Colors.grey,
+                          ),
+                      ),
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.all(10),
+                          child: OutlinedButton(
+                            child: const Text("Chấp nhận"),
+                            onPressed: () {},
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.resolveWith((states) => Colors.blue),
+                              foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+                            ),
+                          ),
+                        ),
+
+                        Container(
+                          margin: const EdgeInsets.all(10),
+                          child: OutlinedButton(
+                            child: const Text("Xóa"),
+                            onPressed: () {},
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.resolveWith((states) => Colors.white54),
+                              foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ); 
+    return  ListView(
       children: [
         Container(
-          height: 150,
-          margin: const EdgeInsets.fromLTRB(20, 20, 0, 20),
-          child:  Row(
-            children:  [
-              CircleAvatar(
-                    radius: 75,
-                    foregroundImage: ExactAssetImage("images/"+info.avatarName),
-              ),
-            
-              Column( 
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [ 
-                      Container(
-                        margin: const EdgeInsets.all(10),
-                        child: Text(
-                          info.name,
-                          style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),    
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(width-485, 5, 10, 0),
-                        child:  Text(
-                        info.time,
-                          style: const TextStyle(
-                          color : Colors.grey,
-                          ),
-                        ),
-                      ),
-                      
-                    ],
-                  ),
-                  Container(
-                    margin: const EdgeInsets.all(10),
-                    child:  Text(
-                      info.mutualFriends.toString() + " bạn chung ",
-                        style: const TextStyle(
-                          color : Colors.grey,
-                        ),
-                    ),
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.all(10),
-                        child: OutlinedButton(
-                          child: const Text("Chấp nhận"),
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.resolveWith((states) => Colors.blue),
-                            foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
-                          ),
-                        ),
-                      ),
-
-                      Container(
-                        margin: const EdgeInsets.all(10),
-                        child: OutlinedButton(
-                          child: const Text("Xóa"),
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.resolveWith((states) => Colors.white54),
-                            foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ],
-    ); 
-    return Scaffold(      
-      body: ListView(
-        children: [
-          Row(
+          padding: const EdgeInsets.all(4),
+          margin: const EdgeInsets.fromLTRB(6,2,6,2),          
+          color: const Color.fromRGBO(255, 255, 255, 100),
+          child: Row(
             children: [
               Expanded(
                 child: Container(
@@ -142,7 +150,12 @@ class _AddFriendScreen extends State<AddFriendScreen>{
                 )
             ],
           ),
-          Row(
+        ),
+        Container(
+          padding: const EdgeInsets.all(4),
+          margin: const EdgeInsets.fromLTRB(6,2,6,2),
+          color: const Color.fromRGBO(255, 255, 255, 100),
+          child: Row(
             children: [
               Expanded(
                 child: Container(
@@ -169,11 +182,11 @@ class _AddFriendScreen extends State<AddFriendScreen>{
               )
             ],
           ),
-          //In dấu ... dùng để gắn list mới ra vào cái list hiện tại  
-          ...addFriendInfos.map(buildAddFriend).toList(),
-          
-        ],
-      ),
+        ),
+        
+        //In dấu ... dùng để gắn list mới ra vào cái list hiện tại  
+        ...addFriendInfos.map(buildAddFriend).toList(),
+      ],
     );
   }
 }

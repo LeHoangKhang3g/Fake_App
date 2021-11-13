@@ -32,77 +32,85 @@ class _NotificationScreenState extends State<NotificationScreen>{
       InfoFake("avatar2.jpg","Hoàng Idol","Đã nhắn tin với bạn","2 ngày trước ",Icons.message),
       InfoFake("avatar1.jpg","Minh Đức","Đã gửi lời mời kết bạn","2 ngày trước ",Icons.people),
     ];
-    Widget buildInfoFake(InfoFake info)=> Row(
-      children:[
-        Stack(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(14),
-              child:  CircleAvatar(
-                radius: 30,
-                foregroundImage: ExactAssetImage("images/"+info.avatarName),
+    Widget buildInfoFake(InfoFake info)=> Container(
+      color: const Color.fromRGBO(255, 255, 255, 100),
+      padding: const EdgeInsets.all(4),
+      margin: const EdgeInsets.fromLTRB(6,2,6,2),
+      child: Row(
+        children:[
+          Stack(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(14),
+                child:  CircleAvatar(
+                  radius: 30,
+                  foregroundImage: ExactAssetImage("images/"+info.avatarName),
+                ),
               ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 50 , left: 50),
-              child: Icon(
-                info.icon,
-                color:  Colors.red,
-                size: 36,
-              ),
-            ),  
-          ],
-        ),
-        
-        Column( 
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [ 
-                Container(
-                  margin: const EdgeInsets.all(10),
-                  child:  Text(
-                    info.name,
-                    style:  const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+              Container(
+                margin: const EdgeInsets.only(top: 50 , left: 50),
+                child: Icon(
+                  info.icon,
+                  color:  Colors.red,
+                  size: 36,
+                ),
+              ),  
+            ],
+          ),
+          
+          Column( 
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [ 
+                  Container(
+                    margin: const EdgeInsets.all(10),
+                    child:  Text(
+                      info.name,
+                      style:  const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(right: 10),
-                  child:  Text(info.context,
-                    softWrap: true,
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.more_horiz)
-                )
-              ],
-            ),          
-            Row(
-              children: [
-                Container(
-                  margin: const EdgeInsets.all(10),
-                  child:  Text(
-                    info.time,
-                    style: const  TextStyle(
-                      fontSize: 14,
-                      color: Colors.black54,
+                  Container(
+                    margin: const EdgeInsets.only(right: 10),
+                    child:  Text(info.context,
+                      softWrap: true,
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ],
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.more_horiz)
+                  )
+                ],
+              ),          
+              Row(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.all(10),
+                    child:  Text(
+                      info.time,
+                      style: const  TextStyle(
+                        fontSize: 14,
+                        color: Colors.black54,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      )
     );
-    return Scaffold(
-      body: ListView(
-        children: [
-          Row(
+    return ListView(
+      children: [
+        Container(
+          color: const Color.fromRGBO(255, 255, 255, 100),
+          padding: const EdgeInsets.all(4),
+          margin: const EdgeInsets.fromLTRB(6,2,6,2),
+          child: Row(
             children: [
               Expanded(
                 child: Container(
@@ -129,7 +137,12 @@ class _NotificationScreenState extends State<NotificationScreen>{
               )
             ],
           ),
-          Row(
+        ),
+        Container(
+          color: const Color.fromRGBO(255, 255, 255, 100),
+          padding: const EdgeInsets.all(4),
+          margin: const EdgeInsets.fromLTRB(6,2,6,2),
+          child: Row(
             children: [
               Expanded(
                 child: Container(
@@ -156,8 +169,13 @@ class _NotificationScreenState extends State<NotificationScreen>{
               )
             ],
           ),
-          ...infoFakes.map(buildInfoFake).toList(),
-          Row(
+        ),
+        ...infoFakes.map(buildInfoFake).toList(),
+        Container(
+          color: const Color.fromRGBO(255, 255, 255, 100),
+          padding: const EdgeInsets.all(4),
+          margin: const EdgeInsets.fromLTRB(6,2,6,2),
+          child: Row(
             children: [
               Expanded(
                 child: Container(
@@ -173,9 +191,10 @@ class _NotificationScreenState extends State<NotificationScreen>{
               ),
             ],
           ),
-          ...infoFakess.map(buildInfoFake).toList(),
-        ],
-      ),
+        ),
+        ...infoFakess.map(buildInfoFake).toList(),
+      ],
+      
     );
   }
 }
