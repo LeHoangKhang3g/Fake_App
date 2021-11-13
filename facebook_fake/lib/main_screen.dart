@@ -51,7 +51,7 @@ class _MainScreenState extends State<MainScreen> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        backgroundColor: const Color.fromRGBO(190, 190, 190, 100),
+        backgroundColor: const Color.fromRGBO(230, 230, 230, 100),
         appBar: AppBar(
             bottom: const TabBar(
               tabs: [
@@ -60,7 +60,12 @@ class _MainScreenState extends State<MainScreen> {
                 Tab(icon: Icon(Icons.notifications)),
               ],
             ),
-          title: const Text('Tabs Demo'),
+          title: const Text(
+            'facebook',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
         ),
         drawer: Drawer(
           child: ListView(
