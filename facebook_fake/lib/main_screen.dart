@@ -18,7 +18,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  List<MenuItem> Menu =[
+  List<MenuItem> menu =[
     MenuItem(Icons.person_pin_rounded,"Profile"),
     MenuItem(Icons.security,"Security"),
     MenuItem(Icons.door_back_door_outlined,"Sign out"),
@@ -70,7 +70,7 @@ class _MainScreenState extends State<MainScreen> {
                   ],
                 ),
               ),
-              ...Menu.map(buildMenuItem).toList(),
+              ...menu.map(buildMenuItem).toList(),
             ],
           ),
         ),
