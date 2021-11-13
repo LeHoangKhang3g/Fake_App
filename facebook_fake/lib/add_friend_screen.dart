@@ -22,10 +22,12 @@ class _AddFriendScreen extends State<AddFriendScreen>{
   Widget build(BuildContext context){
     double width = MediaQuery.of(context).size.width;
     List<AddFriendInfo> addFriendInfos = [
-      AddFriendInfo("avatar5.jpg" ,"Alaxander Khang" , "2 ngày", 10),
-      AddFriendInfo("avatar2.jpg" ,"Alaxander Trung", "6 tuần", 6),
-      AddFriendInfo("avatar3.jpg" ,"Alaxander Khang Pro", "5 ngày", 15),
-
+      AddFriendInfo("avatar5.jpg" ,"Alaxander Trung" , "2 ngày", 10),
+      AddFriendInfo("avatar2.jpg" ,"KhangZOZ", "5 tuần", 6),
+      AddFriendInfo("avatar3.jpg" ,"Trương Huy", "1 tuần", 15),
+      AddFriendInfo("avatar1.jpg" ,"Hoàng Huy" , "2 tuần", 10),
+      AddFriendInfo("avatar4.jpg" ,"Minh Đức", "1 tháng", 6),
+      AddFriendInfo("avatar2.jpg" ,"Huy Hoàng", "2 tháng", 15),
     ];
 
     Widget buildAddFriend(AddFriendInfo info)=> Row(

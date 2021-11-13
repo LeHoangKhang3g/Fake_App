@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class InfoFake{
   final String avatarName;
   final String name;
@@ -11,7 +10,6 @@ class InfoFake{
   InfoFake(this.avatarName,this.name,this.context,this.time,this.icon);
 }
 
-
 class NotificationScreen extends StatefulWidget{
   const NotificationScreen({Key?key}):super(key: key);
   @override
@@ -21,16 +19,18 @@ class _NotificationScreenState extends State<NotificationScreen>{
   @override
   Widget build(BuildContext context){
     List<InfoFake> infoFakes = [
-      InfoFake("avatar5.jpg","Alaxander Trung","Đã Phát Trực Tiếp","15 giây trước ",Icons.video_call_sharp),
-      InfoFake("avatar3.jpg","Khang ZOZ","Đã nhắn tin với bạn"," 2 giờ ",Icons.message),
-      InfoFake("avatar4.jpg","Linh Linh","Thông báo tin của bạn ấy","15 giây trước ",Icons.info_outline),
+      InfoFake("avatar5.jpg","Alaxander Trung","Đã Phát Trực Tiếp","4 phút trước ",Icons.video_call_sharp),
+      InfoFake("avatar3.jpg","Khang ZOZ","Đã nhắn tin với bạn"," 1 giờ trước ",Icons.message),
+      InfoFake("avatar4.jpg","Linh Linh","Thông báo tin của bạn ấy","2 giờ trước ",Icons.info_outline),
 
     ];
     List<InfoFake> infoFakess = [
-      InfoFake("avatar1.jpg","Minh Đức","Đã Phát Trực Tiếp","15 giây trước ",Icons.video_camera_front_sharp),
-      InfoFake("avatar2.jpg","Hoàng Idol","Đã nhắn tin với bạn","15 giây trước ",Icons.message),
-      InfoFake("avatar5.jpg","Alaxander Trung","Đã gửi lời mời kết bạn","15 giây trước ",Icons.people),
-
+      InfoFake("avatar5.jpg","Alaxander Trung","Đã Phát Trực Tiếp","4 giờ trước ",Icons.video_camera_front_sharp),
+      InfoFake("avatar2.jpg","Hoàng Idol","Đã nhắn tin với bạn","1 ngày trước ",Icons.message),
+      InfoFake("avatar1.jpg","Minh Đức","Đã gửi lời mời kết bạn","1 ngày trước ",Icons.people),
+      InfoFake("avatar3.jpg","Khang ZOZ","Đã Phát Trực Tiếp","1 giờ trước ",Icons.video_camera_front_sharp),
+      InfoFake("avatar2.jpg","Hoàng Idol","Đã nhắn tin với bạn","2 ngày trước ",Icons.message),
+      InfoFake("avatar1.jpg","Minh Đức","Đã gửi lời mời kết bạn","2 ngày trước ",Icons.people),
     ];
     Widget buildInfoFake(InfoFake info)=> Row(
       children:[
@@ -72,18 +72,15 @@ class _NotificationScreenState extends State<NotificationScreen>{
                 Container(
                   margin: const EdgeInsets.only(right: 10),
                   child:  Text(info.context,
-                            softWrap: true,
-                  
-                  ), 
-
-                ),                  
+                    softWrap: true,
+                  ),
+                ),
                 IconButton(
                   onPressed: () {},
                   icon: const Icon(Icons.more_horiz)
-                  )
+                )
               ],
-            ),
-            
+            ),          
             Row(
               children: [
                 Container(
@@ -121,14 +118,15 @@ class _NotificationScreenState extends State<NotificationScreen>{
               ),
               OutlinedButton(
                 style: ElevatedButton.styleFrom(
-                    shape: const CircleBorder() , padding: const EdgeInsets.all(20)),
-                    child: const Icon(
-                      Icons.search,
-                      size: 24,
-                      color: Colors.black,
-                    ),
-                      onPressed: () {},
-                )
+                  shape: const CircleBorder() , padding: const EdgeInsets.all(20)
+                ),
+                child: const Icon(
+                  Icons.search,
+                  size: 24,
+                  color: Colors.black,
+                ),
+                onPressed: () {},
+              )
             ],
           ),
           Row(
