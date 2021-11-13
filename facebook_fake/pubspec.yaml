@@ -57,6 +57,13 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  fonts:
+    - family: RobotoMono
+      fonts:
+        - asset: fonts/RobotoMono-Regular.ttf
+        - asset: fonts/RobotoMono-Bold.ttf
+          weight: 700
+          
   assets:
     - images/avatar1.jpg
     - images/avatar2.jpg

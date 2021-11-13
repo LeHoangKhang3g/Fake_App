@@ -11,7 +11,8 @@ class AddFriendScreen extends StatefulWidget{
 class _AddFriendScreen extends State<AddFriendScreen>{
   @override
   Widget build(BuildContext context){
-    return Scaffold(
+    double width = MediaQuery.of(context).size.width;
+    return Scaffold(      
       body: ListView(
         children: [
           Row(
@@ -71,65 +72,70 @@ class _AddFriendScreen extends State<AddFriendScreen>{
             children: [
               Container(
                 height: 100,
-                margin: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+                margin: const EdgeInsets.fromLTRB(20, 20, 0, 20),
                 child:  Row(
-                  children: const [
-                    CircleAvatar(
+                  children:  [
+                    const CircleAvatar(
                           radius: 50,
                           foregroundImage: ExactAssetImage("images/avatar5.jpg"),
                     ),           
+                    Column(
+                      children: [
+                        Row(
+                          children:[
+                            Container(
+                              margin: const EdgeInsets.all(10),
+                              child: const Text(
+                                "Alaxander Trung",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),    
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(width-370, 5, 10, 0),
+                              child: const Text(
+                              "2 ngày",
+                              style: TextStyle(
+                                color : Colors.grey,
+                              ),
+                            ),
+                            ),          
+                            
+                          ],
+                        ),
+                        const Text(
+                          "1000+ bạn chung",
+                            style: TextStyle(
+                              color : Colors.grey,
+                            ),
+                        ),
+                        Row(
+                          children: [
+                            OutlinedButton(
+                              child: const Text("Chấp nhận"),
+                              onPressed: () {},
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.resolveWith((states) => Colors.blue),
+                                foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+                              ),
+                            ),
+
+                            OutlinedButton(
+                              child: const Text("Xóa"),
+                              onPressed: () {},
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.resolveWith((states) => Colors.white54),
+                                foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ],
                 ),
-              ),
-              Column(
-                children: [
-                  Row(
-                    children: const [
-                      Expanded(
-                        child: Text(
-                          "Alaxander Trung",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      Text(
-                        "2 ngày",
-                        style: TextStyle(
-                          color : Colors.grey,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const Text(
-                    "1000+ bạn chung",
-                      style: TextStyle(
-                        color : Colors.grey,
-                      ),
-                  ),
-                  Row(
-                    children: [
-                      OutlinedButton(
-                        child: const Text("Chấp nhận"),
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.resolveWith((states) => Colors.blue),
-                          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
-                        ),
-                      ),
-
-                      OutlinedButton(
-                        child: const Text("Xóa"),
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.resolveWith((states) => Colors.white54),
-                          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
               ),
             ],
           ),
