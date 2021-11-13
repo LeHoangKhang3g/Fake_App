@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
 import 'add_friend_screen.dart';
-import 'notification_screen';
+import 'notification_screen.dart';
 import 'profile.dart';
 import 'security.dart';
 
@@ -57,7 +57,7 @@ class _MainScreenState extends State<MainScreen> {
               tabs: [
                 Tab(icon: Icon(Icons.home)),
                 Tab(icon: Icon(Icons.people)),
-                Tab(icon: Icon(Icons.doorbell)),
+                Tab(icon: Icon(Icons.notifications)),
               ],
             ),
           title: const Text('Tabs Demo'),
