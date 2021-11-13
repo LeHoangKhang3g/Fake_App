@@ -8,6 +8,14 @@ class AddFriendScreen extends StatefulWidget{
 class _AddFriendScreen extends State<AddFriendScreen>{
   @override
   Widget build(BuildContext context){
-    return Text("1");
+    return Container(
+      padding: const EdgeInsets.all(20),
+      child: const Text(
+        "BAN",
+      ),
+
+
+
+    );
   }
 }

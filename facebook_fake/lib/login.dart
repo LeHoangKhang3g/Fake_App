@@ -60,7 +60,7 @@ class _LoginState extends State<Login> {
             ),
           ),      
           Container(
-            padding: const EdgeInsets.fromLTRB(50, 120, 50, 20),
+            padding: const EdgeInsets.fromLTRB(50, 60, 50, 20),
             child: TextField(
                   controller: _controller1,
                   decoration: const InputDecoration(
@@ -87,7 +87,7 @@ class _LoginState extends State<Login> {
             ),
          ),
          Container(
-           padding: const EdgeInsets.fromLTRB(50, 100, 50, 50),
+           padding: const EdgeInsets.fromLTRB(50, 50, 50, 50),
            child:  OutlinedButton( 
                 onPressed: () {
                   if(_controller1.text.isEmpty||_controller2.text.isEmpty){
